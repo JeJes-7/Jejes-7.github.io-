@@ -8,11 +8,59 @@
     <link rel="stylesheet" href="src/responsive.css" />
   </head>
   <body>
-    <notes-app></notes-app>
+    <header>
+      <div class="wrapper">
+        <a href="#" class="brand-name">Notes App</a>
+      </div>
+    </header>
 
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <section>
+            <h2 tabindex="0" class="title-section">My Notes</h2>
+            <hr />
+
+            <section tabindex="0" id="notesList" class="notes-list"></section>
+
+            <h2 tabindex="0" class="title-section">Add Notes</h2>
+            <hr />
+
+            <form id="noteForm">
+              <div class="title">
+                <input
+                  type="text"
+                  id="titleInput"
+                  placeholder="Title"
+                  required
+                />
+                <span class="tooltip-title">Title</span>
+              </div>
+              <div class="body">
+                <input type="text" id="bodyInput" placeholder="Body" required />
+                <span class="tooltip-body">Body</span>
+              </div>
+              <div class="date">
+                <input type="date" id="dateInput" required />
+                <span class="tooltip-date">Date</span>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <p class="foot-information">Jesika Yudiani Putri @CodingCamp 2025</p>
+      </div>
+    </footer>
+
+    <script src="path/to/notes-app.js" type="module"></script>
+    <script src="path/to/notes-list.js" type="module"></script>
+    <script src="path/to/note-item.js" type="module"></script>
     <script src="src/data.js"></script>
-    <script src="src/components/notes-app.js" type="module"></script>
-    <script src="src/components/notes-list.js" type="module"></script>
-    <script src="src/components/note-item.js" type="module"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
