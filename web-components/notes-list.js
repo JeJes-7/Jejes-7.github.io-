@@ -9,6 +9,24 @@ class NotesList extends HTMLElement {
     this.loadNotes();
   }
 
+  loadNotes() {
+    const container = this.shadowRoot.getElementById("notesContainer");
+    container.innerHTML = "";
+
+    if (!window.notesData || window.notesData.length === 0) {
+      container.innerHTML = `<p class="empty-message">No notes available.</p>`;
+      return;
+    }
+
+    window.notesData.forEach((note) => {
+      const noteItem = document.createElement("note-item");
+      noteItem.setAttribute("title", note.title);
+      noteItem.setAttribute("body", note.body);
+      noteItem.setAttribute("createdat", note.createdAt);
+      container.appendChild(noteItem);
+    });
+  }
+
   render() {
     this.shadowRoot.innerHTML = `
       <style>
@@ -30,25 +48,5 @@ class NotesList extends HTMLElement {
       <div class="notes-list" id="notesContainer"></div>
     `;
   }
-
-  loadNotes() {
-    const container = this.shadowRoot.getElementById("notesContainer");
-
-    if (!window.notesData || window.notesData.length === 0) {
-      container.innerHTML =
-        '<p class="empty-message">No notes yet. Add your first note!</p>';
-      return;
-    }
-
-    container.innerHTML = "";
-    window.notesData.forEach((note) => {
-      const noteItem = document.createElement("note-item");
-      noteItem.setAttribute("title", note.title);
-      noteItem.setAttribute("body", note.body);
-      noteItem.setAttribute("createdat", note.createdAt);
-      container.appendChild(noteItem);
-    });
-  }
 }
-
 customElements.define("notes-list", NotesList);
