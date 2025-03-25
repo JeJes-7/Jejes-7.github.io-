@@ -52,6 +52,128 @@ hr {
   margin: 1rem 0;
 }
 
+/* Notes List Styles */
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.note-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.note-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.note-item__title {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #b03052;
+}
+
+.note-item__body {
+  margin-bottom: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.note-item__date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Form Styles */
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form .title h3 {
+  color: #b03052;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+form .title,
+form .body,
+form .date {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #b03052;
+  box-shadow: 0 0 0 2px rgba(214, 108, 130, 0.2);
+}
+
+form input::placeholder {
+  color: #aaa;
+}
+
+form .tooltip-title,
+form .tooltip-body,
+form .tooltip-date {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  background-color: #d76c82;
+  color: white;
+  padding: 0 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+form input:focus + .tooltip-title,
+form input:focus + .tooltip-body,
+form input:focus + .tooltip-date {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d76c82;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #b03052;
+}
+
 /* Footer Styles */
 footer {
   background-color: #d76c82;
